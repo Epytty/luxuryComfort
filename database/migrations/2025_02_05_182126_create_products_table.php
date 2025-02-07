@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('branding');
             $table->string('sex')->nullable();
             $table->string('productType');
+            $table->string('collection');
             $table->string('category');
             $table->string('article');
             $table->string('title');
