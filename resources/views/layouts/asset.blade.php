@@ -14,10 +14,10 @@
             
             <div class="headerControls">
                 <a href="#">Поиск</a>
-                <a href="#">Войти</a>
-                <a href="#">Избранное</a>
-                <a href="#">Корзина</a>
-                <a href="{{ route('admin.index')}}">Администратор</a>
+                <a href="{{ route('login.index') }}">Войти</a>
+                <a href="{{ route('favorite.index') }}">Избранное</a>
+                <a href="{{ route('cart.index') }}">Корзина</a>
+                <a href="{{ route('admin.index') }}">Администратор</a>
             </div>
 
             <nav>

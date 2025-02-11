@@ -4,9 +4,10 @@
     <form action="" class="">
         <input>
         <input>
-        <textarea>
+        <textarea></textarea>
         <input>
         <input>
         <button type="submit" class="">Добавить</button>
     </form>
+    <button><a href="{{ route('admin.index') }}">Назад</a></button>
 @endsection
