@@ -12,3 +12,4 @@ Route::get('/somepath', function () {
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
 Route::get('/products', [ProductController::class, 'index'])->name('products.index');
 Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+Route::get('/admin/addProduct', [AdminController::class, 'indexNewProduct'])->name('addProduct.index');
