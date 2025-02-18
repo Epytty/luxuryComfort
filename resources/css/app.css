@@ -14,5 +14,210 @@
 
 body {
     font-family: 'MontserratRegular', sans-serif;
+    font-size: 16px;
 }
 
+h1 {
+    font-family: 'MontserratBold', sans-serif;
+    font-size: 24px;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+h3 {
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.topHeader {
+    height: 80px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.topheaderLeft {
+    height: 100%;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.topheaderControls {
+    height: 100%;
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.controlButton {
+    font-size: 12px;
+}
+
+.controlButtonContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.controlImage {
+    width: 16px;
+    height: 16px;
+}
+
+.adminControl {
+    background-color: rgb(54, 206, 87);
+    border: 1px rgb(54, 206, 87);
+    border-radius: 10px;
+    padding: 1% 1% 1% 1%;
+}
+
+.downHeader {
+    display: flex;
+    height: 70px;
+    align-items: center;
+    justify-content: center;
+}
+
+.navBar {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'MontserratBold', sans-serif;
+    font-size: 16px;
+}
+
+.saleNavItem {
+    color: rgb(231, 38, 38);
+}
+
+.footerHr {
+    width: 76%;
+    border-width: 1px;
+    margin: 5% 12% 3% 12%;
+}
+
+.footerContainer {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.topFooter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 0% 7% 2% 7%;    
+}
+
+.downFooter {
+    align-items: center;
+}
+
+.footerLabel {
+    margin: 0% 0% 5% 0%;
+}
+
+.popularCategories, .customer, .information {
+    font-size: 12px;
+}
+
+.number {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.number img {
+    width: 18px;
+    height: 18px;
+}
+
+.numberText {
+    display: flex;
+    font-family: 'MontserratBold', sans-serif;
+    font-size: 10px;
+    color: lightslategray;
+    white-space: pre-line;
+}
+
+.subscribeContainer {
+    display: flex;
+    flex-direction: column;
+    height: 60%;
+    justify-content: space-evenly;
+}
+
+.emailInputContainer {
+    border-bottom: solid 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.categoriesList li, .infoForCustomerList li, .infoLinksList li {
+    margin-bottom: 10px;
+}
+
+input {
+    outline: none;
+}
+
+.rightArrowImage {
+    width: 20px;
+    height: 20px;
+}
+
+.mediaList {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.mediaTelegramImage, .mediaInstagramImage, .mediaWhatappImage, 
+.mediaFacebookImage, .mediaPinterestImage {
+    width: 30px;
+    height: 30px;
+}
+
+.downFooter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.shopInfo {
+    width: 30%;
+}
+
+.payment {
+    width: 30%;
+}
+
+.shopInfoText {
+    font-size: 14px;
+    color: lightslategray;
+    white-space: pre-line;
+}
+
+.paymentList {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
