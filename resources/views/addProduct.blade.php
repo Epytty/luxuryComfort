@@ -1,7 +1,7 @@
 @extends('layouts.asset')
 @section('content')
     <div class="content">
-        <h1>Добавить новый товар</h1>
+        <h1 class="contentTitle">Добавить новый товар</h1>
         <form action="" class="">
             <input>
             <input>
