@@ -32,12 +32,22 @@ h3 {
     font-size: 12px;
 }
 
+footer {
+    margin-bottom: 2%;
+}
+
 .topHeader {
     height: 80px;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0; 
+    right: 0;
+    z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    background-color: white; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .topheaderLeft {
@@ -88,6 +98,7 @@ h3 {
 
 .downHeader {
     display: flex;
+    margin-top: 80px;
     height: 70px;
     align-items: center;
     justify-content: center;
@@ -220,4 +231,50 @@ input {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+}
+
+.contentContainer {
+    margin: 1% 13% 0% 13%;
+}
+
+.contentHome {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.celebritiesContainer, .saleContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.homeBlockImage {
+    width: 100%;
+    margin: 3% 0% 1% 0%;
+}
+
+.homeBlockControls {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.homeBlockTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.homeBlockText {
+    margin: 0% 20% 0% 20%;
+    text-align: center;
+}
+
+.homeBlockButton {
+    margin: 1% 0% 3% 0%;
+    width: 20%;
+    padding: 0.5%;
+    border: solid 2px;
+    border-radius: 20px;
 }
