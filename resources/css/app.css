@@ -366,3 +366,12 @@ input {
     background-color: rgb(231, 38, 38);
     transform: scale(110%);
 }
+
+.addProductForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.addProductForm * {
+    border: solid 1px;
+}

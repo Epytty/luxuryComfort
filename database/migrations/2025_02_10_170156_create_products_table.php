@@ -13,26 +13,26 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('brandId');
+            $table->integer('brandId')->nullable();
             $table->string('sex')->nullable();
-            $table->unsignedInteger('typeId');
-            $table->unsignedInteger('collectionId');
-            $table->unsignedInteger('categoryId');
-            $table->string('article');
+            $table->integer('typeId')->nullable();
+            $table->integer('collectionId')->nullable();
+            $table->integer('categoryId')->nullable();
+            $table->string('article', 10)->unique();
             $table->string('title');
             $table->string('shortTitle');
             $table->text('description');
-            $table->string('color');
-            $table->string('size');
+            $table->string('color')->default('-');
+            $table->string('size')->default('-');
             $table->double('price');
-            $table->string('image');
-            $table->string('composition');
-            $table->string('designCountry');
-            $table->string('manufacturenCountry');
-            $table->string('importer');
-            $table->boolean('availability');
+            $table->string('image')->default('1');
+            $table->string('composition')->default('-');
+            $table->string('designCountry')->default('-');
+            $table->string('manufacturenCountry')->default('-');
+            $table->string('importer')->default('-');
+            $table->boolean('availability')->default(false);
             $table->timestamps();
-        });
+        });        
     }
 
     /**
