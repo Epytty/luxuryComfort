@@ -78,6 +78,6 @@ class ProductController extends Controller {
 
     public function delete(Product $product) {
         $product->delete();
-        return redirect()->route('products.index', $product->id);
+        return redirect()->route('products.index');
     }
 }

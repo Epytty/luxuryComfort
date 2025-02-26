@@ -582,3 +582,98 @@ label {
 .manufacturenCountry, .importer, .availability {
     margin-bottom: 3%;
 }
+
+.productsPage {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.filters {
+    display: flex;
+    flex-direction: column;
+    background-color:#f0eeee;
+    border-radius: 10px;
+    padding: 2% 2% 2% 2%;
+    width: 25%;
+    height: 600px;
+    overflow-y: auto;
+    padding-right: 16px;
+    scrollbar-color: #f0f0f0 #fff;
+    scrollbar-width: thin;
+}
+
+.products {
+    display: flex;
+    flex-direction: row;
+    margin-left: 3%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 75%;
+}
+
+.productsItem {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    height: auto;
+    transition: transform 0.2s;
+    box-shadow: 1px 1px 10px 1px rgba(41, 67, 86, 0.3);
+    border-radius: 10px;
+    margin: 1% 2% 1% 2%;
+}
+
+.productsItem:hover {
+    transform: scale(105%);
+}
+
+.itemPhoto {
+    height: 70%;
+    border-radius: 10px;
+}
+
+.productItemImage {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: auto;
+}
+
+.itemInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 20%;
+    padding-left: 5%;
+}
+
+.productsBtnsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 2%;
+    padding: 1% 1% 2% 1%;
+}
+
+.productsCartBtn {
+    width: 60%;
+    background-color: rgb(54, 206, 87);
+    border-radius: 10px;
+    color: white;
+    padding: 2%;
+    transition: color 0.2s;
+}
+
+.productsCartBtn:hover {
+    color: rgb(54, 206, 87);
+    background-color: white;
+    border: 2px solid rgb(54, 206, 87);
+}
+
+.productsFavoriteBtn {
+    align-items: center;
+}
+
+.favoriteItemImage {
+    width: 40px;
+} 
