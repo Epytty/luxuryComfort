@@ -11,4 +11,12 @@ class AdminController extends Controller {
     public function indexNewProduct() {
         return view('addProduct');        
     }
+
+    public function indexNewBrand() {
+        return view('addBrand');        
+    }
+
+    public function indexNewCollection() {
+        return view('addCollection');        
+    }
 }

@@ -12,8 +12,12 @@
         <div class="headerContainer">
             <div class="topHeader">
                 <div class="topheaderLeft">
-                    <button>Бургер</button>
-
+                    <div class="burgerContainer">
+                        <button>Бургер</button>
+                        <a href="{{ route('products.index') }}">
+                            <span class="burgerText">КАТАЛОГ</span>
+                        </a>
+                    </div>
                     <div class="phoneModal">
                         <span>+375 (69) 696-9-696</span>
                     </div>

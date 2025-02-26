@@ -34,6 +34,8 @@ Route::delete('/brands/{brand}', [BrandController::class, 'delete'])->name('bran
 
 Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
 Route::get('/admin/addProduct', [AdminController::class, 'indexNewProduct'])->name('addProduct.index');
+Route::get('/admin/addBrand', [AdminController::class, 'indexNewBrand'])->name('addBrand.index');
+Route::get('/admin/addCollection', [AdminController::class, 'indexNewCollection'])->name('addCollection.index');
 
 Route::get('/login', [LoginController::class, 'index'])->name('login.index');
 Route::get('/register', [RegisterController::class, 'index'])->name('register.index');

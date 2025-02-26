@@ -58,6 +58,21 @@ footer {
     justify-content: space-between;
 }
 
+.burgerContainer {
+    display: flex;
+    width: 35%;
+    justify-content: space-between;
+}
+
+.burgerText {
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.burgerText:hover {
+    color: rgb(231, 38, 38);
+}
+
 .logo {
     height: 100%;
     display: flex;
@@ -211,12 +226,21 @@ footer a:hover {
     align-items: center;
 }
 
+.emailInput {
+    background-color: white;
+}
+
 .categoriesList li, .infoForCustomerList li, .infoLinksList li {
     margin-bottom: 10px;
 }
 
-input {
+input, select, textarea{
+    background-color:#f0eeee;
     outline: none;
+    padding: 1% 1% 1% 1%;
+    border-radius: 10px;
+    margin: 1% 0% 1% 0%;
+    border-style: none;
 }
 
 .rightArrowImage {
@@ -372,6 +396,189 @@ input {
     flex-direction: column;
 }
 
-.addProductForm * {
-    border: solid 1px;
+.menusContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.leftMenu {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 20%;
+}
+
+.leftMenuBtn {
+    margin: 3%;
+    background-color: #f0eeee;
+    border-radius: 10px;
+    height: 10%;
+    width: 90%;
+}
+
+.rightMenu {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+.photoContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-radius: 10px;
+    background-color: #f0eeee;
+    border-style: none;
+    align-items: center;
+    height: 300px;
+}
+
+.photoContainerSpan {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.photoContaierImage {
+    margin-left: 10%;
+    width: 80%;
+}
+
+.selectPhotoBtn {
+    width: 100px;
+}
+
+.photoInput {
+    border-style: none;
+    width: 50%;
+}
+
+.firstPhoto, .secondPhoto, .thirdPhoto, .fourthPhoto {
+    display: flex;
+    background-color: #faf9f9;
+    width: 20%;
+    height: 70%;
+    border-radius: 10px;
+    border: 5px solid #d1cccc;
+    border-style: dashed;
+    align-items: center;
+    justify-content: center;
+}
+
+.brandInputContainer, .sexInputContainer, .typeInputContainer, .categoryInputContainer, 
+.collectionInputContainer, .colorInputContainer, .sizeInputContainer, .availabilityInputContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align:end;
+    width: 100%;
+}
+
+.brandInputContainer select, .sexInputContainer select, .typeInputContainer select, .categoryInputContainer select,
+.collectionInputContainer select, .colorInputContainer select, .sizeInputContainer select, .availabilityInputContainer select {
+    width: 90%;
+}
+
+.titleInputContainer input, .shortTitleInputContainer input, .descriptionInputContainer input, .priceInputContainer input, .compositionInputContainer input, .designCountryInputContainer input, .manufacturenCountryInputContainer input, .importerInputContainer input, .availabilityInputContainer input {
+    width: 100%;
+}
+
+.productCard {
+    display: flex;
+    flex-direction: row;
+}
+
+.photos {
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+}
+
+.photosColumn {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    height: 90%;
+    background-color: aqua;
+    margin-top: 2%;
+}
+
+.bigPhoto {
+    width: 75%;
+    height: 90%;
+    margin: 2% 5% 2% 5%;
+    background-color: rebeccapurple;
+}
+
+.infos {
+    width: 40%;
+}
+
+.productInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.title, .shortTitle, .article, .collectionId,
+.color, .sex, .size, .price, .cartBtn, .favoriteBtn {
+    margin-bottom: 3%;
+}
+
+.title, .price, .priceSpan {
+    font-size: 36px;
+}
+
+.btnsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.cartBtn {
+    width: 40%;
+    height: 10%;
+    background-color: rgb(54, 206, 87);
+    border-radius: 10px;
+    color: white;
+    padding: 2%;
+    margin-top: 5%;
+    transition: color 0.2s;
+}
+
+.favoriteBtn {
+    width: 40%;
+    height: 10%;
+    background-color: white;
+    border-radius: 10px;
+    border: 2px solid rgb(54, 206, 87);
+    color: rgb(54, 206, 87);
+    padding: 2%;
+    margin-top: 5%;
+    transition: color 0.2s;
+}
+
+.cartBtn:hover {
+    color: rgb(54, 206, 87);
+    background-color: white;
+    border: 2px solid rgb(54, 206, 87);
+}
+
+.favoriteBtn:hover {
+    color: white;
+    background-color: rgb(54, 206, 87);
+}
+
+label {
+    color:rgb(173, 166, 166);
+}
+
+.descriptionBlock {
+    display: flex;
+    flex-direction: column;
+}
+
+.description, .composition, .designCountry,
+.manufacturenCountry, .importer, .availability {
+    margin-bottom: 3%;
 }
