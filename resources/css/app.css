@@ -521,7 +521,8 @@ input, select, textarea{
 }
 
 .title, .shortTitle, .article, .collectionId,
-.color, .sex, .size, .price, .cartBtn, .favoriteBtn {
+.color, .sex, .size, .price, .cartBtn, .favoriteBtn,
+.categoryId, .typeId, .brandId {
     margin-bottom: 3%;
 }
 

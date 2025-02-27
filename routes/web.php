@@ -17,6 +17,12 @@ Route::get('/somepath', function () {
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
 
 Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+Route::get('/womans', [ProductController::class, 'indexWomans'])->name('womans.index');
+Route::get('/mans', [ProductController::class, 'indexMans'])->name('mans.index');
+Route::get('/kids', [ProductController::class, 'indexKids'])->name('kids.index');
+Route::get('/accessorys', [ProductController::class, 'indexAccessory'])->name('accessory.index');
+Route::get('/shoes', [ProductController::class, 'indexShoes'])->name('shoes.index');
+Route::get('/sale', [ProductController::class, 'indexSale'])->name('sale.index');
 Route::get('/admin/addProduct', [ProductController::class, 'create'])->name('product.create');
 Route::post('/products', [ProductController::class, 'store'])->name('product.store');
 Route::get('/products/{product}', [ProductController::class, 'show'])->name('product.show');
@@ -39,6 +45,9 @@ Route::get('/admin/addCollection', [AdminController::class, 'indexNewCollection'
 
 Route::get('/login', [LoginController::class, 'index'])->name('login.index');
 Route::get('/register', [RegisterController::class, 'index'])->name('register.index');
+Route::post('/login', [LoginController::class, 'authentication'])->name('authentication');
+Route::post('/register', [RegisterController::class, 'registerCreate'])->name('registerCreate');
 
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 Route::get('/favorite', [FavoriteController::class, 'index'])->name('favorite.index');
+Route::post('/favorite/add/{productId}', [FavoriteController::class, 'addToFavorites'])->name('favorites.add');

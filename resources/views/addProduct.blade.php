@@ -24,127 +24,93 @@
                 <form action="{{ route('product.store') }}" method="post" class="addProductForm">
                     @csrf
                     <div class="photoContainer">
-                        <div class="firstPhoto">
-                            <button>
-                                <span class="photoContainerSpan">
-                                    <img src="{{ asset('images/plus.svg') }}" alt="plus" class="photoContaierImage">
-                                    <input type="file" class="photoInput">
-                                </span>
-                            </button>
-                        </div>
-                        
-                        <div class="secondPhoto">
-                            <button>
-                                <span class="photoContainerSpan">
-                                    <img src="{{ asset('images/plus.svg') }}" alt="plus" class="photoContaierImage">
-                                    <input type="file" class="photoInput">
-                                </span>
-                            </button>
-                        </div>
-                        <div class="thirdPhoto">
-                            <button>
-                                <span class="photoContainerSpan">
-                                    <img src="{{ asset('images/plus.svg') }}" alt="plus" class="photoContaierImage">
-                                    <input type="file" class="photoInput">
-                                </span>
-                            </button>
-                        </div>
-                        <div class="fourthPhoto">
-                            <button>
-                                <span class="photoContainerSpan">
-                                    <img src="{{ asset('images/plus.svg') }}" alt="plus" class="photoContaierImage">
-                                    <input type="file" class="photoInput">
-                                </span>
-                            </button>
-                        </div>
+                        <h3>Фото</h3>
+                        <input type="file" name="images[]" multiple required>
                     </div>
                     <div class="brandInputContainer">
                         <h3>Бренд</h3>
-                        <select name="brandId">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
+                        <select name="brandId" required>
+                            @foreach($brands as $brand)
+                                <option value="{{ $brand->id }}">{{ $brand->name }}</option>
+                            @endforeach
                         </select>
                     </div>
+                    
                     <div class="sexInputContainer">
                         <h3>Пол</h3>
-                        <select name="sex">
-                            <option>Мужской</option>
-                            <option>Женский</option>
+                        <select name="sex" required>
+                            <option value="Мужской">Мужской</option>
+                            <option value="Женский">Женский</option>
+                            <option value="Унисекс">Унисекс</option>
                         </select>
                     </div>
+                    
                     <div class="typeInputContainer">
                         <h3>Тип одежды</h3>
-                        <select name="typeId">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
+                        <select name="typeId" required>
+                            @foreach($types as $type)
+                                <option value="{{ $type->id }}">{{ $type->name }}</option>
+                            @endforeach
                         </select>
                     </div>
+                    
                     <div class="categoryInputContainer">
                         <h3>Категории</h3>
-                        <select name="categoryId">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
+                        <select name="categoryId" required>
+                            @foreach($categories as $category)
+                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                            @endforeach
                         </select>
                     </div>
+                    
                     <div class="collectionInputContainer">
                         <h3>Коллекция</h3>
-                        <select name="collectionId">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
+                        <select name="collectionId" required>
+                            @foreach($collections as $collection)
+                                <option value="{{ $collection->id }}">{{ $collection->name }}</option>
+                            @endforeach
                         </select>
                     </div>
+                    
                     <div class="titleInputContainer">
                         <h3>Название товара</h3>
-                        <input name="title" placeholder="Название товара">
+                        <input name="title" placeholder="Название товара" required>
                     </div>
                     <div class="shortTitleInputContainer">
                         <h3>Короткое название товара</h3>
-                        <input name="shortTitle" placeholder="Краткое название">
+                        <input name="shortTitle" placeholder="Краткое название" required>
                     </div>
                     <div class="descriptionInputContainer">
                         <h3>Описание товара</h3>
-                        <textarea name="description" placeholder="Описание"></textarea>
+                        <textarea name="description" placeholder="Описание" required></textarea>
                     </div>
                     <div class="colorInputContainer">
                         <h3>Цвета</h3>
-                        <select name="color">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                        </select>
+                        <input name="color" placeholder="Цвет" required>
                     </div>
                     <div class="sizeInputContainer">
                         <h3>Размеры</h3>
-                        <select name="size">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                        </select>
+                        <input name="size" placeholder="Размер" required>
                     </div>
                     <div class="priceInputContainer">
                         <h3>Цена</h3>
-                        <input name="price">
+                        <input name="price" type="number" step="0.01" required>
                     </div>
-                    {{-- image input --}}
                     <div class="compositionInputContainer">
                         <h3>Состав</h3>
-                        <textarea name="composition" placeholder="Состав"></textarea>
+                        <textarea name="composition" placeholder="Состав" required></textarea>
                     </div>
                     <div class="designCountryInputContainer">
                         <h3>Страна разработки дизайна</h3>
-                        <input name="designCountry">
+                        <input name="designCountry" required>
                     </div>
                     <div class="manufacturenCountryInputContainer">
                         <h3>Страна производства</h3>
-                        <input name="manufacturenCountry">
+                        <input name="manufacturenCountry" required>
                     </div>
                     <div class="importerInputContainer">
                         <h3>Импортер</h3>
-                        <input name="importer">
+                        <input name="importer" required>
                     </div>
                     <div class="availabilityInputContainer">
                         <h3>Наличие</h3>

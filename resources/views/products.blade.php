@@ -42,18 +42,23 @@
                         </a>
                     </div>
                     <div class="itemInfo">
-                        <h1><span>{{ $product->price }}</span></h1>
+                        <h1>
+                            <span>{{ $product->price }}</span>
+                            <span>byn</span>
+                        </h1>
                         <span>{{ $product->shortTitle }}</span>
                     </div>
                     <div class="productsBtnsContainer">
                         <button class="productsCartBtn">
                             <span>В корзину</span>
                         </button>
-                        <button class="productsFavoriteBtn">
-                            <img src="{{ asset('images/favorite.svg') }}" alt="favoriteItemImage" class="favoriteItemImage">
-                        </button>
+                        <form action="{{ route('favorites.add', $product->id) }}" method="post">
+                            @csrf
+                            <button class="productsFavoriteBtn">
+                                <img src="{{ asset('images/favorite.svg') }}" alt="favoriteItemImage" class="favoriteItemImage">
+                            </button>
+                        </form>
                     </div>
-                    
                 </div>
                 @endforeach
             </div>

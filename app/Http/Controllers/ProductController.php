@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\Image;
 use App\Models\Product;
+use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
 class ProductController extends Controller {
@@ -12,12 +15,43 @@ class ProductController extends Controller {
         return view('products', compact('products'));
     }
 
-    public function create() {
-        return view('addProduct');
+    public function indexWomans() {
+        $products = Product::all();
+        return view('womans', compact('products'));
     }
 
-    public function store() {
-        $data = request()->validate([
+    public function indexMans() {
+        $products = Product::all();
+        $categories = Category::all();
+        return view('mans', compact('products', 'categories'));
+    }
+
+    public function indexAccessory() {
+        $products = Product::all();
+        return view('accessory', compact('products'));
+    }
+
+    public function indexKids() {
+        $products = Product::all();
+        return view('kids', compact('products'));
+    }
+
+    public function indexShoes() {
+        $products = Product::all();
+        return view('shoes', compact('products'));
+    }
+
+    public function indexSale() {
+        $products = Product::all();
+        return view('sale', compact('products'));
+    }
+
+    public function create() {
+        return view('addProduct');    
+    }    
+
+    public function store(Request $request) {
+        $data = $request->validate([
             'brandId' => 'required',
             'sex' => 'required',
             'typeId' => 'required',
@@ -28,19 +62,18 @@ class ProductController extends Controller {
             'description' => 'required',
             'color' => 'required',
             'price' => 'required',
-            'image' => 'required',
             'composition' => 'required',
             'designCountry' => 'required',
             'manufacturenCountry' => 'required',
             'importer' => 'required',
             'availability' => 'string',
         ]);
-
+    
         if (empty($data['article'])) {
             $data['article'] = Str::random(10);
         }
-        
-        Product::create($data);
+    
+        $product = Product::create($data);
         return redirect()->route('products.index');
     }
 
@@ -79,5 +112,10 @@ class ProductController extends Controller {
     public function delete(Product $product) {
         $product->delete();
         return redirect()->route('products.index');
+    }
+
+    public function getProductsByCategory($categoryId) {
+        $products = Product::where('category_id', $categoryId)->get();
+        return response()->json($products);
     }
 }

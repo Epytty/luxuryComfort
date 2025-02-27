@@ -1,9 +1,40 @@
 @extends('layouts.asset')
 @section('content')
     <div class="content">
-        <h1 class="contentTitle">Избранное</h1>
-        <div class="favorites">
-            @foreach($favorites as $favorite)
+        <div class="productsPage">
+            <div class="filters">
+                <ul>
+                    <li>1</li>
+                    <li>1</li>
+                    <li>1</li>
+                    <li>1</li>
+                    <li>1</li>
+                    <li>1</li>
+                    <li>1</li>
+                    <li>1</li>
+                    <li>1</li>
+                    <li>1</li>
+                    <li>1</li>
+                    <li>1</li>
+                    <li>1</li>
+                    <li>1</li>
+                    <li>1</li>
+                    <li>1</li>
+                    <li>1</li>
+                    <li>1</li>
+                    <li>1</li>
+                    <li>1</li>
+                    <li>1</li>
+                    <li>1</li>
+                    <li>1</li>
+                    <li>1</li>
+                    <li>1</li>
+                    <li>1</li>
+                    <li>1</li>
+                </ul>
+            </div>
+            <div class="products">
+                @foreach ($products as $product)
                 <div class="productsItem">
                     <div class="itemPhoto">
                         <a href="{{ route('product.show', $product->id) }}">
@@ -25,8 +56,10 @@
                             <img src="{{ asset('images/favorite.svg') }}" alt="favoriteItemImage" class="favoriteItemImage">
                         </button>
                     </div>
+                    
                 </div>
-            @endforeach
+                @endforeach
+            </div>
         </div>
     </div>
 @endsection

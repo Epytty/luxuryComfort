@@ -8,11 +8,11 @@ class BrandController extends Controller {
 
     public function index() {
         $brands = Brand::all();
-        return view('brand.brands', compact('brands'));
+        return view('brands', compact('brands'));
     }
 
     public function create() {
-        return view('brand.addBrand');
+        return view('addBrand');
     }
 
     public function store() {
@@ -25,11 +25,11 @@ class BrandController extends Controller {
     }
 
     public function show(Brand $brand) {
-        return view('brand.showBrand', compact('brand'));
+        return view('showBrand', compact('brand'));
     }
 
     public function edit(Brand $brand) {
-        return view('brand.editBrand', compact('brand'));
+        return view('editBrand', compact('brand'));
     }
 
     public function update(Brand $brand) {

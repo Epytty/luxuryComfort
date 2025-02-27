@@ -80,37 +80,37 @@
             <div class="downHeader">
                 <div class="navBar">
                     <div class="saleNavItem">
-                        <a href="#">
+                        <a href="{{ route('sale.index') }}">
                             <span>🎈 Акция</span>
                         </a>
                     </div>
                     <div class="navItem">
-                        <a href="#">
+                        <a href="{{ route('womans.index') }}">
                             <span>Женщинам</span>
                         </a>
                     </div>
                     <div class="navItem">
-                        <a href="#">
+                        <a href="{{ route('mans.index') }}">
                             <span>Мужчинам</span>
                         </a>
                     </div>
                     <div class="navItem">
-                        <a href="#">
+                        <a href="{{ route('accessory.index') }}">
                             <span>Аксессуары</span>
                         </a>
                     </div>
                     <div class="navItem">
-                        <a href="#">
+                        <a href="{{ route('shoes.index') }}">
                             <span>Обувь</span>
                         </a>
                     </div>
                     <div class="navItem">
-                        <a href="#">
+                        <a href="{{ route('kids.index') }}">
                             <span>Детям</span>
                         </a>
                     </div>
                     <div class="navItem">
-                        <a href="#">
+                        <a href="{{ route('brands.index') }}">
                             <span>Бренды</span>
                         </a>
                     </div>

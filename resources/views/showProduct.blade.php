@@ -32,9 +32,18 @@
 
                     <label for="article">Артикул:</label>
                     <span name="article" class="article">{{ $product->article }}</span>
+                    
+                    <label for="brandId">Бренд:</label>
+                    <span name="brandId" class="brandId">{{ optional($product->brand)->name ?? 'Не указано' }}</span>
 
                     <label for="collectionId">Коллекция:</label>
-                    <span name="collectionId" class="collectionId">{{ $product->collectionId }}</span>
+                    <span name="collectionId" class="collectionId">{{ optional($product->collection)->name ?? 'Не указано' }}</span>
+
+                    <label for="categoryId">Категория:</label>
+                    <span name="categoryId" class="categoryId">{{ optional($product->category)->name ?? 'Не указано' }}</span>
+
+                    <label for="typeId">Тип:</label>
+                    <span name="typeId" class="typeId">{{ optional($product->type)->name ?? 'Не указано' }}</span>
 
                     <label for="color">Цвет:</label>
                     <select name="color" class="collectionId" value="{{ $product->color }}">
@@ -89,12 +98,6 @@
                 </div>
             </div>
         </div>
-        
-        {{-- <span name="brandId">{{ $product->brandId }}</span>
-
-        <span name="typeId">{{ $product->typeId }}</span>
-        <span name="categoryId">{{ $product->categoryId }}</span> --}}
-        {{-- <span name="image">{{ $product->image }}</span> --}}
     </form>
 
     <form action="{{ route('product.delete', $product->id) }}" method="post">
