@@ -43,17 +43,40 @@
                                 <span>Поиск</span>
                             </span>
                         </button>
-                    </div>                
-                    <div class="loginControl">
-                        <button class="controlButton">
-                            <a href="{{ route('login.index') }}">
-                                <span class="controlButtonContainer">
-                                    <img src="{{ asset('images/door.svg') }}" alt="login" class="controlImage">
-                                    <span>Войти</span>
-                                </span>
-                            </a>
-                        </button>
-                    </div>                
+                    </div>  
+                    @auth
+                        <div class="loginControl">
+                            <button class="controlButton">
+                                <a href="{{ route('logout') }}">
+                                    <span class="controlButtonContainer">
+                                        <img src="{{ asset('images/door.svg') }}" alt="login" class="controlImage">
+                                        <span>Выйти</span>
+                                    </span>
+                                </a>
+                            </button>
+                        </div> 
+                        <div class="loginControl">
+                            <button class="controlButton">
+                                <a href="{{ route('profile.index') }}">
+                                    <span class="controlButtonContainer">
+                                        <img src="{{ asset('images/profile.svg') }}" alt="profile" class="controlImage">
+                                        <span>Профиль</span>
+                                    </span>
+                                </a>
+                            </button>
+                        </div> 
+                        @else
+                            <div class="loginControl">
+                                <button class="controlButton">
+                                    <a href="{{ route('login.index') }}">
+                                        <span class="controlButtonContainer">
+                                            <img src="{{ asset('images/door.svg') }}" alt="login" class="controlImage">
+                                            <span>Войти</span>
+                                        </span>
+                                    </a>
+                                </button>
+                            </div> 
+                    @endauth              
                     <div class="favoriteControl">
                         <button class="controlButton">
                             <a href="{{ route('favorite.index') }}">

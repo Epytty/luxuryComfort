@@ -16,4 +16,9 @@ class LoginController extends Controller {
         Auth::attempt($arr);
         return view('home');
     }
+
+    public function logout() {
+        Auth::logout();
+        return redirect()->route('home.index');
+    }
 }

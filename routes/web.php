@@ -7,14 +7,17 @@ use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
+use Symfony\Component\HttpKernel\Profiler\Profile;
 
 Route::get('/somepath', function () {
     return view('welcome');
 });
 
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
+Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
 
 Route::get('/products', [ProductController::class, 'index'])->name('products.index');
 Route::get('/womans', [ProductController::class, 'indexWomans'])->name('womans.index');
@@ -47,6 +50,7 @@ Route::get('/login', [LoginController::class, 'index'])->name('login.index');
 Route::get('/register', [RegisterController::class, 'index'])->name('register.index');
 Route::post('/login', [LoginController::class, 'authentication'])->name('authentication');
 Route::post('/register', [RegisterController::class, 'registerCreate'])->name('registerCreate');
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 Route::post('/cart/add/{productId}', [CartController::class, 'addToCart'])->name('cart.add');
