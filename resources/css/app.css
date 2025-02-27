@@ -657,12 +657,22 @@ label {
 }
 
 .productsCartBtn {
-    width: 60%;
+    width: 200%;
+    height: 40px;
     background-color: rgb(54, 206, 87);
     border-radius: 10px;
     color: white;
     padding: 2%;
     transition: color 0.2s;
+}
+
+.productsCartBtnForm {
+    margin: 0% 35% 0% 0%;
+    width: 30%;
+}
+
+.productsFavoriteBtnForm {
+    display: flex;
 }
 
 .productsCartBtn:hover {

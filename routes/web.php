@@ -49,5 +49,6 @@ Route::post('/login', [LoginController::class, 'authentication'])->name('authent
 Route::post('/register', [RegisterController::class, 'registerCreate'])->name('registerCreate');
 
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+Route::post('/cart/add/{productId}', [CartController::class, 'addToCart'])->name('cart.add');
 Route::get('/favorite', [FavoriteController::class, 'index'])->name('favorite.index');
 Route::post('/favorite/add/{productId}', [FavoriteController::class, 'addToFavorites'])->name('favorites.add');

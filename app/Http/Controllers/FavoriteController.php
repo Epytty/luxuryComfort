@@ -44,7 +44,7 @@ class FavoriteController extends Controller {
     public function showFavorites()
     {
         $userId = Auth::id();
-        $favorites = Favorite::with('product')->where('user_id', $userId)->get();
+        $favorites = Favorite::with('product')->where('userId', $userId)->get();
 
         return view('favorite', compact('favorites'));
     }

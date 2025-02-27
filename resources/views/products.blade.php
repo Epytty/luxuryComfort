@@ -49,10 +49,13 @@
                         <span>{{ $product->shortTitle }}</span>
                     </div>
                     <div class="productsBtnsContainer">
-                        <button class="productsCartBtn">
-                            <span>В корзину</span>
-                        </button>
-                        <form action="{{ route('favorites.add', $product->id) }}" method="post">
+                        <form action="{{ route('cart.add', $product->id) }}" method="post" class="productsCartBtnForm">
+                            @csrf
+                            <button class="productsCartBtn">
+                                <span>В корзину</span>
+                            </button>
+                        </form>
+                        <form action="{{ route('favorites.add', $product->id) }}" method="post" class="productsFavoriteBtnForm">
                             @csrf
                             <button class="productsFavoriteBtn">
                                 <img src="{{ asset('images/favorite.svg') }}" alt="favoriteItemImage" class="favoriteItemImage">

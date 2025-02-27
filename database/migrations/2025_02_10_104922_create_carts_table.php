@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->unsignedInteger('userId');
             $table->unsignedInteger('productId');
-            $table->unsignedInteger('totalPrice');
             $table->timestamps();
         });
     }
