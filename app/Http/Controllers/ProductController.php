@@ -73,7 +73,7 @@ class ProductController extends Controller {
             $data['article'] = Str::random(10);
         }
     
-        $product = Product::create($data);
+        Product::create($data);
         return redirect()->route('products.index');
     }
 

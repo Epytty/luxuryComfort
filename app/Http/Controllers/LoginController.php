@@ -12,13 +12,20 @@ class LoginController extends Controller {
     }
 
     public function authentication(Request $request) {
-        $arr = $request->only((['email', 'password']));
-        Auth::attempt($arr);
-        return view('home');
-    }
-
-    public function logout() {
-        Auth::logout();
-        return redirect()->route('home.index');
+        $credentials = $request->only(['email', 'password']);
+    
+        if (Auth::attempt($credentials)) {
+            $user = Auth::user();
+    
+            if ($user->roleId === 1) {
+                return redirect()->route('admin.index');
+            } elseif ($user->roleId === 2) {
+                return redirect()->route('home.index');
+            }
+        }
+    
+        return back()->withErrors([
+            'email' => 'Неверные учетные данные.',
+        ]);
     }
 }

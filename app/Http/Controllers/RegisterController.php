@@ -12,7 +12,12 @@ class RegisterController extends Controller {
     }
 
     public function registerCreate(Request $request) {
-        User::create($request->only(['email', 'password', 'name']));
+        User::create($request->only([
+            'email',
+            'password', 
+            'name',
+            'roleId' => 2,
+        ]));
         return redirect()->route('login.index');
     }
 }

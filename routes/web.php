@@ -10,7 +10,6 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
-use Symfony\Component\HttpKernel\Profiler\Profile;
 
 Route::get('/somepath', function () {
     return view('welcome');
@@ -26,25 +25,25 @@ Route::get('/kids', [ProductController::class, 'indexKids'])->name('kids.index')
 Route::get('/accessorys', [ProductController::class, 'indexAccessory'])->name('accessory.index');
 Route::get('/shoes', [ProductController::class, 'indexShoes'])->name('shoes.index');
 Route::get('/sale', [ProductController::class, 'indexSale'])->name('sale.index');
-Route::get('/admin/addProduct', [ProductController::class, 'create'])->name('product.create');
+// Route::get('/admin/addProduct', [ProductController::class, 'create'])->name('product.create');
 Route::post('/products', [ProductController::class, 'store'])->name('product.store');
 Route::get('/products/{product}', [ProductController::class, 'show'])->name('product.show');
-Route::get('/products/{product}/edit', [ProductController::class, 'edit'])->name('product.edit');
-Route::patch('/products/{product}', [ProductController::class, 'update'])->name('product.update');
-Route::delete('/products/{product}', [ProductController::class, 'delete'])->name('product.delete');
+// Route::get('/products/{product}/edit', [ProductController::class, 'edit'])->name('product.edit');
+// Route::patch('/products/{product}', [ProductController::class, 'update'])->name('product.update');
+// Route::delete('/products/{product}', [ProductController::class, 'delete'])->name('product.delete');
 
 Route::get('/brands', [BrandController::class, 'index'])->name('brands.index');
-Route::get('/admin/addBrand', [BrandController::class, 'create'])->name('brand.create');
+// Route::get('/admin/addBrand', [BrandController::class, 'create'])->name('brand.create');
 Route::post('/brands', [BrandController::class, 'store'])->name('brand.store');
-Route::get('/brands/{brand}', [BrandController::class, 'show'])->name('brand.show');
-Route::get('/brands/{brand}/edit', [BrandController::class, 'edit'])->name('brand.edit');
-Route::patch('/brands/{brand}', [BrandController::class, 'update'])->name('brand.update');
-Route::delete('/brands/{brand}', [BrandController::class, 'delete'])->name('brand.delete');
+// Route::get('/brands/{brand}', [BrandController::class, 'show'])->name('brand.show');
+// Route::get('/brands/{brand}/edit', [BrandController::class, 'edit'])->name('brand.edit');
+// Route::patch('/brands/{brand}', [BrandController::class, 'update'])->name('brand.update');
+// Route::delete('/brands/{brand}', [BrandController::class, 'delete'])->name('brand.delete');
 
-Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
-Route::get('/admin/addProduct', [AdminController::class, 'indexNewProduct'])->name('addProduct.index');
-Route::get('/admin/addBrand', [AdminController::class, 'indexNewBrand'])->name('addBrand.index');
-Route::get('/admin/addCollection', [AdminController::class, 'indexNewCollection'])->name('addCollection.index');
+// Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+// Route::get('/admin/addProduct', [AdminController::class, 'indexNewProduct'])->name('addProduct.index');
+// Route::get('/admin/addBrand', [AdminController::class, 'indexNewBrand'])->name('addBrand.index');
+// Route::get('/admin/addCollection', [AdminController::class, 'indexNewCollection'])->name('addCollection.index');
 
 Route::get('/login', [LoginController::class, 'index'])->name('login.index');
 Route::get('/register', [RegisterController::class, 'index'])->name('register.index');
@@ -56,3 +55,35 @@ Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 Route::post('/cart/add/{productId}', [CartController::class, 'addToCart'])->name('cart.add');
 Route::get('/favorite', [FavoriteController::class, 'index'])->name('favorite.index');
 Route::post('/favorite/add/{productId}', [FavoriteController::class, 'addToFavorites'])->name('favorites.add');
+
+Route::group(['middleware' => ['role:admin']], function () {
+Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+Route::get('/admin/addProduct', [AdminController::class, 'indexNewProduct'])->name('addProduct.index');
+Route::get('/admin/addBrand', [AdminController::class, 'indexNewBrand'])->name('addBrand.index');
+Route::get('/admin/addCollection', [AdminController::class, 'indexNewCollection'])->name('addCollection.index');
+Route::get('/brands/{brand}/edit', [BrandController::class, 'edit'])->name('brand.edit');
+Route::patch('/brands/{brand}', [BrandController::class, 'update'])->name('brand.update');
+Route::delete('/brands/{brand}', [BrandController::class, 'delete'])->name('brand.delete');
+Route::get('/admin/addBrand', [BrandController::class, 'create'])->name('brand.create');
+Route::get('/products/{product}/edit', [ProductController::class, 'edit'])->name('product.edit');
+Route::patch('/products/{product}', [ProductController::class, 'update'])->name('product.update');
+Route::delete('/products/{product}', [ProductController::class, 'delete'])->name('product.delete');
+Route::get('/admin/addProduct', [ProductController::class, 'create'])->name('product.create');
+
+});
+
+Route::group(['middleware' => ['role:user']], function () {
+    Route::get('/', [HomeController::class, 'index'])->name('home.index');
+Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
+
+Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+Route::post('/cart/add/{productId}', [CartController::class, 'addToCart'])->name('cart.add');
+Route::get('/favorite', [FavoriteController::class, 'index'])->name('favorite.index');
+Route::post('/favorite/add/{productId}', [FavoriteController::class, 'addToFavorites'])->name('favorites.add');
+Route::get('/login', [LoginController::class, 'index'])->name('login.index');
+Route::get('/register', [RegisterController::class, 'index'])->name('register.index');
+Route::post('/login', [LoginController::class, 'authentication'])->name('authentication');
+Route::post('/register', [RegisterController::class, 'registerCreate'])->name('registerCreate');
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+
+});
